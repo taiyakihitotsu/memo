@@ -1,0 +1,25 @@
+{
+  "name": "memo",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "type": "tsc --noEmit",
+    "format": "biome format --write ./src",
+    "lint": "biome lint ./src",
+    "lint/fix": "biome lint --apply ./src"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.9",
+    "type-fest": "^5.5.0",
+    "typescript": "^6.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taiyakihitotsu/memo.git"
+  },
+  "keywords": [],
+  "author": "taiyakihitotsu <taiyakihitotsu@proton.me> https://github.com/taiyakihitotsu",
+  "license": "3-clause BSD license"
+}
