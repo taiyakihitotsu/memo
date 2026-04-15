@@ -1,8 +1,9 @@
 ---
 title: 'type-puzzle-pitfalls'
-date: '2026-04-12 08:10:42'
+date: '2026-04-15 17:53:48'
 tags: '[typescript]'
 author: 'taiyakihitotsu'
+description: "A collection of personal notes on TypeScript type-level programming.   It covers everything from basic tips to traps I often fall into. "
 ---
 [Source]( https://github.com/taiyakihitotsu/memo/blob/main/src/type-puzzle-pitfalls.ts )
 
