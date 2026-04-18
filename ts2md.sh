@@ -54,12 +54,23 @@ generate_front_matter() {
     local title="${filename%.ts}"
     local current_date=$(date +"%Y-%m-%d %H:%M:%S")
 
+    local description=$(sed -n '/\/\*\*/,/\*\//p' "$input_file" | \
+        sed 's/\/\*\*//; s/\*\///; s/^[[:space:]]*\*[[:space:]]*//; s/^[[:space:]]*//' | \
+        grep -v '^$' | \
+        grep -v '^@' | \
+        head -n 2 | tr '\n' ' ' | sed 's/"/\\"/g')
+
+    if [ -z "$description" ]; then
+        description="Documentation for ${title}."
+    fi
+
     cat <<EOF
 ---
 title: '${title}'
 date: '${current_date}'
 tags: '[typescript]'
 author: 'taiyakihitotsu'
+description: "${description}"
 ---
 [Source]( https://github.com/taiyakihitotsu/memo/blob/main/src/${title}.ts )
 EOF
